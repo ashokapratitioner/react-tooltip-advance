@@ -11,6 +11,10 @@
     "advance",
     "ui"
   ],
+   "repository": {
+    "type": "git",
+    "url": "git@github.com:ashokapratitioner/react-tooltip-advance.git"
+  },
   "scripts": {
     "build": "webpack-dev-server --mode production",
     "start": "webpack-dev-server --mode development"
