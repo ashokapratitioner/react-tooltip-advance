@@ -1,12 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 import ReactTooltip from "./src/ReactTooltip.js";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(
-  <React.StrictMode>
-    <ReactTooltip displayText="Hello text" tooltipText="hello tooltip" />
-  </React.StrictMode>
-);
+const returnLibrary = () => {
+  return {
+    ReactTooltip: ReactTooltip,
+    // you can add here other components that you want to export
+  };
+};
+export default returnLibrary();
