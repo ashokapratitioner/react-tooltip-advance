@@ -1,6 +1,6 @@
 {
   "name": "react-tooltip-advance",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "",
   "main": "index.js",
   "author": "Ashok Gupta",
@@ -21,9 +21,6 @@
     "start": "webpack-dev-server --mode development"
   },
   "license": "ISC",
-  "files": [
-    "dist"
-  ],
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0"
