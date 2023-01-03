@@ -21,10 +21,6 @@ yarn add react-tooltip-advance
 1 . Require react-tooltip-advance after installation
 
 ```js
-import { Tooltip } from 'react-tooltip-advance'
-```
-
-```js
 import { Tooltip as ReactTooltip } from 'react-tooltip-advance'
 ```
 
