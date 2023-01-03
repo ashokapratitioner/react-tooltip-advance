@@ -3,21 +3,19 @@ import "./react-tooltip.scss";
 
 const ReactTooltip = ({ displayText, tooltipText }) => {
   const tooltipRef = useRef(null);
-  let offset;
-  // const paraRef = useRef(null);
+  let tooltipContainer;
 
   const paraRef = (el) => {
-    offset = el && el.getBoundingClientRect();
+    tooltipContainer = el;
   };
 
-  const handleMouseOver = () => {
-    console.log(isInViewport());
-  };
+  const handleMouseOver = (event) => {
+    let x = event.clientX,
+      y = event.clientY;
 
-  const isInViewport = (offset = 0) => {
-    if (!tooltipRef.current) return false;
-    const top = tooltipRef.current.getBoundingClientRect().top;
-    return top + offset >= 0 && top - offset <= window.innerHeight;
+    tooltipRef.current.style.top = y + 10 + "px";
+    tooltipRef.current.style.left = x + 10 + "px";
+    tooltipRef.current.style.opacity = 1;
   };
 
   if (!displayText) return <></>;
