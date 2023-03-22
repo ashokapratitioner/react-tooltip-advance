@@ -1,8 +1,9 @@
 {
   "name": "react-tooltip-advance",
-  "version": "1.0.7",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.9",
+  "description": "React tooltip component",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "author": "Ashok Gupta",
   "private": false,
   "keywords": [
@@ -15,29 +16,52 @@
     "type": "git",
     "url": "git@github.com:ashokapratitioner/react-tooltip-advance.git"
   },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "scripts": {
-    "prepublish": "rm -rf ./dist && npm run build",
-    "build": "webpack --mode production",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "start": "webpack-dev-server --mode development"
   },
-  "license": "ISC",
   "files": [
     "dist",
-    "src"
+    "README.md"
   ],
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  },
   "peerDependencies": {
-    "react": ">=17.0.0",
-    "react-dom": ">=17.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.21.0",
     "@babel/core": "^7.20.7",
+    "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.3",
-    "mini-css-extract-plugin": "^2.7.2",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.7.5",
     "node-sass": "^8.0.0",
-    "react": ">=18.0.0",
-    "react-dom": ">=18.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.75.0",

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./react-tooltip.scss";
+import "./styles/react-tooltip.scss";
 
 const ReactTooltip = ({ displayText, tooltipText }) => {
   const tooltipRef = useRef(null);
