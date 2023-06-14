@@ -21,29 +21,34 @@ yarn add react-tooltip-advance
 1 . Require react-tooltip-advance after installation
 
 ```js
-import { Tooltip as ReactTooltip } from 'react-tooltip-advance'
+import { Tooltip as ReactTooltip } from "react-tooltip-advance";
 ```
 
-2 . Add `<Tooltip />` component with displayText and tooltipText values provided
+2 . Add `<Tooltip />` component with displayContent and tooltipContent values provided
 
 ```jsx
-<Tooltip displayText="Hello text" tooltipText="hello tooltip" />
+<Tooltip displayContent="Hello text" tooltipContent="hello tooltip" />
 ```
 
-3 . Internally it generated paragraph element and span element as shown below, do not worry about events and refs. Its needed purely for tooltip to function in a right way. 
+If you need graphic based tooltip then you can create a presentational component similar to one shown below.
 
 ```jsx
-    <div className="react-tooltip-container">
-      <p
-        className="text-container"
-        ref={paraRef}
-        onMouseOver={handleMouseOver}
-      >
-        {displayText}
-      </p>
-      <span className="tooltip-container" ref={tooltipRef}>
-        {tooltipText}
-      </span>
-    </div>
+const imgContentRFC = (
+  <img
+    src="https://media.istockphoto.com/id/1382384282/photo/bangalore-or-bengaluru.jpg?s=612x612&w=0&k=20&c=6pxwL3JxNV2B_NZSLMZLhrSLqAbyCPlGuSZYKImpjKQ="
+    width={200}
+  />
+);
+<Tooltip displayContent={imgContentRFC} tooltipContent={imgContentRFC} />;
 ```
 
+3 . Internally it generated paragraph and span elements as shown below, do not worry about events and refs. Its needed purely for tooltip to function in a right way.
+
+```jsx
+<div className="react-tooltip-container">
+  <p className="text-container">
+    <span>{displayContent}</span>
+  </p>
+  <span className="tooltip-container">{tooltipContent}</span>
+</div>
+```
