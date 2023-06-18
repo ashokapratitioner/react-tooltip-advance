@@ -1,8 +1,11 @@
 # react-tooltip-advance
 
-[download-url]: https://www.npmjs.com/package/react-tooltip-advance
+[![Version][npm-version]][download-url]
+[![npm download][download-image]][download-url]
 
-![npm downloads](https://img.shields.io/npm/dm/react-tooltip-advance.svg)](https://www.npmjs.com/package/react-tooltip-advance)
+[download-image]: https://img.shields.io/npm/dm/react-tooltip-advance.svg?style=flat-square
+[download-url]: https://npmjs.org/package/react-tooltip-advance
+[npm-version]: http://img.shields.io/npm/v/react-tooltip-advance.svg
 
 - ReactTooltip is developed to provide custom tooltip be it simple text or html content.
 
