@@ -1,6 +1,12 @@
 # react-tooltip-advance
 
-[download-url]: https://npmjs.org/package/react-tooltip
+[download-url]: https://www.npmjs.com/package/react-tooltip-advance
+
+[![npm download]][download-url]
+
+- ReactTooltip is developed to provide custom tooltip be it simple text or html content.
+
+If you like the project, please give the project a GitHub 🌟
 
 ## Installation
 
