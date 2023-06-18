@@ -33,13 +33,31 @@ import { ReactTooltip as Tooltip } from "react-tooltip-advance";
 If you need graphic based tooltip then you can create a presentational component similar to one shown below.
 
 ```jsx
-const imgContentRFC = (
+const ImageContent = (
   <img
     src="https://media.istockphoto.com/id/1382384282/photo/bangalore-or-bengaluru.jpg?s=612x612&w=0&k=20&c=6pxwL3JxNV2B_NZSLMZLhrSLqAbyCPlGuSZYKImpjKQ="
-    width={200}
+    width="200"
+    role="presentation"
   />
 );
-<Tooltip displayContent={imgContentRFC} tooltipContent={imgContentRFC} />;
+
+const renderContent = (type) => {
+  // your display content with html support
+  if (type === "displayContent") {
+    return ImageContent;
+  } else {
+    // your tooltip content with html support
+    return (
+      <>
+        {ImageContent}
+        <br />
+        Hello World!
+      </>
+    );
+  }
+};
+
+<ReactTooltip render={renderContent} />;
 ```
 
 3 . Internally it generated paragraph and span elements as shown below, do not worry about events and refs. Its needed purely for tooltip to function in a right way.

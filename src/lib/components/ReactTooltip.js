@@ -1,7 +1,12 @@
 import React, { useRef } from "react";
 import "./styles/react-tooltip.scss";
 
-const ReactTooltip = ({ displayContent, tooltipContent }) => {
+const DISPLAY_CONTENT = "displayContent";
+const TOOLTIP_CONTENT = "tooltipContent";
+
+const ReactTooltip = (props) => {
+  const { displayContent, tooltipContent, render } = props;
+
   const tooltipRef = useRef(null);
   let tooltipContainer;
 
@@ -25,7 +30,7 @@ const ReactTooltip = ({ displayContent, tooltipContent }) => {
     tooltipRef.current.style.opacity = 1;
   };
 
-  if (!displayContent) return <></>;
+  if (!displayContent && !render) return <></>;
 
   return (
     <div className="react-tooltip-container">
@@ -35,11 +40,11 @@ const ReactTooltip = ({ displayContent, tooltipContent }) => {
           onMouseOver={handleMouseOver}
           onMouseOut={handleMouseOut}
         >
-          {displayContent}
+          {!displayContent ? render(DISPLAY_CONTENT) : displayContent}
         </span>
       </p>
       <span className="tooltip-container" ref={tooltipRef}>
-        {tooltipContent}
+        {!tooltipContent ? render(TOOLTIP_CONTENT) : tooltipContent}
       </span>
     </div>
   );
